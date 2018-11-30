@@ -1,0 +1,18 @@
+<view class='top'>
+  <view class='week'>12周</view>
+  <view class='right'>
+    <view class='day' wx:for="{{['一','二','三','四','五','六','日']}}">{{item}}</view>
+  </view>
+</view>
+<view class="body" >
+  <view>
+    <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12]}}" class="left">
+      {{item}}
+    </view>
+  </view>
+  <view class='table'>
+    <view wx:for="{{courses}}" style="margin-left:{{(item.day-1)*50+5}}px;margin-top:{{(item.start-1)*100+5}}rpx;height:{{item.step*100-5}}rpx;background-color:{{colors[index%10]}};" class='course_item'>
+        {{item.name}}
+    </view>
+  </view>
+</view>

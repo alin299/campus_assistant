@@ -1,0 +1,65 @@
+.top{
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  display: flex;
+  background: white;
+  box-shadow: 0px 5px 3px #c4c4c4;
+}
+.top .week{
+  padding-left: 5px;
+  width: 50rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 0.7rem;
+  justify-content: center; 
+  align-items: center;
+}
+.top .right{
+  display: flex;
+  background: white;
+}
+.top .day{
+  display: flex;
+  width: 100rpx;
+  height: 60rpx;
+  justify-content: center; 
+  align-items: center;
+}
+.body{
+  margin-top: 35px;
+  display: flex;
+}
+.left{
+  display: flex;
+  width: 50rpx;
+  height: 100rpx;
+  justify-content: center; 
+  align-items: center;
+  background: white;
+  color: gray;
+}
+.body .table{
+  width: 100%;
+  background: rgba(228, 228, 228, 0.493);
+  display: flex;
+}
+.table .day{
+  display: flex;
+  flex-direction: column;
+  width: 100rpx;
+  background: rgba(226, 226, 226, 0.507);
+  align-items: center;
+  height: 100%;
+}
+.course_item{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95rpx;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}

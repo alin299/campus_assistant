@@ -1,0 +1,14 @@
+<import src="/template/book.wxml"/>
+<view class='head'>
+  <form bindsubmit="formSubmit">
+    <view class='form'>
+      <input name="input" value='sad' id='search'></input>
+      <button id='searchButton' formType="submit">搜索</button>
+    </view>
+  </form>
+</view>
+<view>
+  <block wx:for="{{books}}">
+    <template is="article" data="{{...item}}"/>
+  </block >
+</view>

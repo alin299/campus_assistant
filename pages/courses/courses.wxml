@@ -1,0 +1,22 @@
+<view class='head'>
+  <text id='month'>{{month}}</text>
+  <block wx:for="{{day}}">
+    <text class='day'>{{item}}</text>
+  </block>
+</view>
+<view class='body'>
+  <view class='left'>
+    <block wx:for="{{time}}">
+      <view class='time'><view>{{item}}</view></view>
+    </block>
+  </view>
+  <view class='table'>
+    <block wx:for="{{courses}}">
+      <view class='day'>
+        <block wx:for="{{item}}" wx:for-item='item2'>
+          <view class='course_item'>{{item2}}</view>
+        </block>
+      </view>
+    </block>
+  </view>
+</view>
