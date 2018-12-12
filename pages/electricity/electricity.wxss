@@ -1,0 +1,32 @@
+page{
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.logo{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.bulb_logo{
+  height: 500rpx;
+  width: 500rpx;
+}
+.balance_text{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20rpx 0 100rpx 0;
+  font-size: 1.4rem;
+}
+.button_group{
+  margin: auto;
+  /* flex-direction: column;
+  align-content:  center; */
+  width: 70%;
+}
+.button_group button{
+  margin-bottom: 40rpx;
+  background: rgba(81, 206, 228, 0.918);
+}

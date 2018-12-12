@@ -79,7 +79,8 @@ Page({
     wx.request({
       url: 'http://www.alin299.top:5000/courses', 
       data: {
-        
+        a: '2016283414',
+        p: ''
       },
       header: {
         'content-type': 'application/json'

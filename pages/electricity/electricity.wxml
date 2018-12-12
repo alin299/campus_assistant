@@ -1,1 +1,8 @@
-<text>余额为{{balance}}</text>
+<view class='logo'>
+  <image class='bulb_logo' src='{{bulb}}'></image>
+</view>
+<view class='balance_text'><text>余额：{{balance}}</text></view>
+<view class='button_group' bindtap='operation'>
+  <button data-category='recharge'>充值</button>
+  <button data-category='query'>查询</button>
+</view>

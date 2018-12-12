@@ -1,0 +1,18 @@
+<!--pages/report/report.wxml-->
+<view class="section">
+  <view class="section__title">当前选择：</view>
+  <picker
+    mode="multiSelector"
+    bindchange="bindMultiPickerChange"
+    value="{{multiIndex}}"
+    range="{{term}}">
+    <view class="picker">
+      {{term[0][multiIndex[0]]}}，{{term[1][multiIndex[1]]}}
+    </view>
+  </picker>
+</view>
+<view>
+  <block wx:for='{{scores}}'>
+    <view>{{item.lesson_name}}{{item.score}}</view>
+  </block>
+</view>

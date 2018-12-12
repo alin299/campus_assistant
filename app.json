@@ -1,9 +1,11 @@
 {
   "pages":[
+    "pages/timetable/timetable",
     "pages/me/me",
+    "pages/recharge/recharge",
+    "pages/report/report",
     "pages/others/others",
     "pages/electricity/electricity",
-    "pages/timetable/timetable",
     "pages/courses/courses",
     "pages/search/search",
     "pages/index/index",

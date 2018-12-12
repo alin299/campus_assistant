@@ -1,26 +1,27 @@
 var server = getApp().globalData.server
+// pages/report/report.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    balance:'N/A',
-    bulb:'/images/bulb.jpg'
+    term: [['2016-2017', '2016-2018'], ['1', '2']],
+    multiIndex: [0, 1],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.get_score();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.get_balance()
+
   },
 
   /**
@@ -64,62 +65,22 @@ Page({
   onShareAppMessage: function () {
 
   },
-  getBalance: function () {
-    var that = this;
-    wx.request({
-      url: server+'/balance',
-      method: 'POST',
-      data: {
-        a: '2016283414',
-        p: '166236'
-      },
-      header: {
-        'content-type': 'application/json'
-      },
-      success(res) {
-        console.log(res.data)
-        if(res.data.code==1){
-          that.setData({
-            balance: res.data.result
-          });
-        }
-        else if(res.data.code==-1){
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'none',
-            duration: 2000
-          })
-        }
-        
-      },
-      fail(){
-        console.log('查询余额失败')
-      }
+  bindMultiPickerChange: function (e) {
+    console.log('picker发送选择改变3，携带值为', e.detail.value)
+    this.setData({
+      multiIndex: e.detail.value
     })
   },
-  operation: function (event) {
-    let category = event.target.dataset.category;
-    switch (category) {
-      case "recharge":
-        console.log("充值")
-        wx.navigateTo({
-          url: '/pages/recharge/recharge',
-        })
-        break;
-      case "query":
-        console.log("查询")
-        this.get_balance();
-        break;
-    }
-  },
-  get_balance: function () {
+  get_score: function () {
     var that = this;
     wx.request({
-      url: server + '/electricity',
+      url: server + '/score',
       method: 'POST',
       data: {
         a: '2016283414',
-        p: '166236'
+        p: '166236',
+        year:'2017-2018',
+        term: '2'
       },
       header: {
         'content-type': 'application/json'
@@ -128,7 +89,7 @@ Page({
         console.log(res.data)
         if (res.data.code == 1) {
           that.setData({
-            balance: res.data.result
+            scores: res.data.result
           })
         }
         else if (res.data.code == -1) {
@@ -141,9 +102,9 @@ Page({
 
       },
       fail() {
-        console.log('查询电费余额失败')
+        console.log('查询成绩失败')
         wx.showToast({
-          title: '查询余额失败',
+          title: '查询成绩失败',
           icon: 'none'
         })
       }

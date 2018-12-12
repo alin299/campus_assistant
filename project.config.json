@@ -36,12 +36,25 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 2,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "2",
-					"pathName": "pages/others/others"
+					"pathName": "pages/others/others",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "report",
+					"pathName": "pages/report/report",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "电费",
+					"pathName": "pages/electricity/electricity",
+					"query": ""
 				}
 			]
 		}

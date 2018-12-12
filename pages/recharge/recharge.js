@@ -1,4 +1,4 @@
-// pages/me/me.js
+// pages/recharge/recharge.js
 Page({
 
   /**
@@ -62,36 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  operation: function (event) {
-    console.log(event)
-    let category = event.target.dataset.category;
-    console.log(category)
-    switch (category) {
-      case "bind":
-        console.log("跳转到绑定页面")
-        wx.navigateTo({
-          url: '/pages/others/others',
-        })
-        break;
-      case "setting":
-        console.log("跳转到设置页面")
-        wx.navigateTo({
-          url: '/pages/others/others',
-        })
-        break;
-      case "feedback":
-        console.log("跳转到反馈页面")
-        wx.navigateTo({
-          url: '/pages/others/others',
-        })
-        break;
-      case "about":
-        console.log("跳转到关于页面")
-        wx.navigateTo({
-          url: '/pages/others/others',
-        })
-        break;
-    }
   }
 })
