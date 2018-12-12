@@ -1,0 +1,12 @@
+<view class='head'>
+  <open-data type="userAvatarUrl" id='avatar'></open-data>
+  <open-data type="userNickName"></open-data>
+</view>
+<view class='area' bindtap='operation'>
+  <view class='item1' data-category='bind'>绑定</view>
+  <view class='item2' data-category='setting'>设置</view>
+</view>
+<view class='area' bindtap='operation'>
+  <view class='item1' data-category='feedback'>反馈</view>
+  <view class='item2' data-category='about'>关于</view>
+</view>

@@ -61,5 +61,5 @@
   align-items: center;
   width: 95rpx;
   border-radius: 5px;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
 }

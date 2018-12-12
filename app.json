@@ -1,5 +1,8 @@
 {
   "pages":[
+    "pages/me/me",
+    "pages/others/others",
+    "pages/electricity/electricity",
     "pages/timetable/timetable",
     "pages/courses/courses",
     "pages/search/search",
@@ -17,11 +20,15 @@
     "list": [
       {
         "pagePath": "pages/timetable/timetable",
-        "text": "首页"
+        "text": "课表"
       },
       {
-        "pagePath": "pages/timetable/timetable",
+        "pagePath": "pages/others/others",
         "text": "其他"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我"
       }
     ]
   },

@@ -1,0 +1,11 @@
+<view class='area' bindtap='operation'>
+  <view class='item1' data-category='timetable'>课表</view>
+  <view class='item2' data-category='score'>成绩查询</view>
+</view>
+<view class='area' bindtap='operation'>
+  <view class='item1' data-category='card'>一卡通</view>
+  <view class='item2' data-category='electricity'>宿舍电费</view>
+</view>
+<view class='area' bindtap='operation'>
+  <view class='item2' data-category='news'>师院大事件</view>
+</view>
