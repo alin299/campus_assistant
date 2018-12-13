@@ -1,1 +1,44 @@
 /* pages/report/report.wxss */
+.search_bar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 10rpx;
+  padding-left: 30rpx;
+  padding-right: 10rpx;
+  background: rgba(218, 218, 218, 0.514);
+  border-radius: 10rpx;
+}
+picker{
+  display: inline-block;
+  margin-right: 60rpx;
+}
+.query{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10rpx;
+  height: 80rpx;
+}
+.table{
+  margin: 80rpx;
+}
+.tip{
+  color: rgb(96, 132, 240);
+  margin-left: 10rpx;
+}
+.tr{
+  display: flex;
+  margin: 60rpx;
+  border-bottom: 0.7px rgba(207, 207, 207, 0.904) solid;
+}
+.td, .th{
+  /* margin: 10rpx 40rpx; */
+  margin: auto;
+}
+.tr>.score::after,.tr>.score::before{
+  content: '. ';
+  visibility: hidden;
+  color: red;
+}

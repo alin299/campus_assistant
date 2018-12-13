@@ -14,7 +14,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.get_score();
+    // this.get_score();
+    this.setData({
+      scores:[
+        { lesson_name: '数学', score: '99'},
+        { lesson_name: '语文', score: '99' },
+        { lesson_name: '英语', score: '99' },
+      ]
+    })
   },
 
   /**
@@ -71,7 +78,13 @@ Page({
       multiIndex: e.detail.value
     })
   },
-  get_score: function () {
+  query: function() {
+    let term = this.data.term;
+    let index = this.data.multiIndex;
+    console.log(term[0][index[0]] + ' ' + term[1][index[1]]);
+    this.get_score(term[0][index[0]], term[1][index[1]]);
+  },
+  get_score: function (year,term) {
     var that = this;
     wx.request({
       url: server + '/score',
@@ -79,8 +92,8 @@ Page({
       data: {
         a: '2016283414',
         p: '166236',
-        year:'2017-2018',
-        term: '2'
+        year: year,
+        term: term
       },
       header: {
         'content-type': 'application/json'
