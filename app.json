@@ -7,9 +7,7 @@
     "pages/report/report",
     "pages/others/others",
     "pages/electricity/electricity",
-    "pages/courses/courses",
-    "pages/search/search",
-    "pages/index/index"
+    "pages/courses/courses"
   ],
   "window":{
     "backgroundTextStyle":"light",

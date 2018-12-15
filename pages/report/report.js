@@ -1,4 +1,6 @@
 var server = getApp().globalData.server
+var get_score = require('../../utils/requests.js').get_score
+var self = this;
 // pages/report/report.js
 Page({
 
@@ -15,6 +17,7 @@ Page({
    */
   onLoad: function (options) {
     // this.get_score();
+    self = this;
     this.setData({
       scores:[
         { lesson_name: '数学', score: '99'},
@@ -85,54 +88,16 @@ Page({
 
   },
   bindMultiPickerChange: function (e) {
-    console.log('picker发送选择改变3，携带值为', e.detail.value)
+    //设置选中的学期
     this.setData({
       multiIndex: e.detail.value
     })
   },
   query: function() {
+    //获取选中的学年和学期
     let term = this.data.term;
     let index = this.data.multiIndex;
     console.log(term[0][index[0]] + ' ' + term[1][index[1]]);
-    this.get_score(term[0][index[0]], term[1][index[1]]);
-  },
-  get_score: function (year,term) {
-    var that = this;
-    wx.request({
-      url: server + '/score',
-      method: 'POST',
-      data: {
-        a: '2016283414',
-        p: '166236',
-        year: year,
-        term: term
-      },
-      header: {
-        'content-type': 'application/json'
-      },
-      success(res) {
-        console.log(res.data)
-        if (res.data.code == 1) {
-          that.setData({
-            scores: res.data.result
-          })
-        }
-        else if (res.data.code == -1) {
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'none',
-            duration: 2000
-          })
-        }
-
-      },
-      fail() {
-        console.log('查询成绩失败')
-        wx.showToast({
-          title: '查询成绩失败',
-          icon: 'none'
-        })
-      }
-    })
+    get_score(self,term[0][index[0]], term[1][index[1]]);
   }
 })

@@ -1,4 +1,5 @@
-var server = getApp().globalData.server
+var requests = require('../../utils/requests.js');
+var self = this;
 Page({
 
   /**
@@ -13,14 +14,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    self = this;
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.get_balance()
+    requests.get_elec_balance(self);
   },
 
   /**
@@ -64,89 +65,22 @@ Page({
   onShareAppMessage: function () {
 
   },
-  getBalance: function () {
-    var that = this;
-    wx.request({
-      url: server+'/balance',
-      method: 'POST',
-      data: {
-        a: '2016283414',
-        p: '166236'
-      },
-      header: {
-        'content-type': 'application/json'
-      },
-      success(res) {
-        console.log(res.data)
-        if(res.data.code==1){
-          that.setData({
-            balance: res.data.result
-          });
-        }
-        else if(res.data.code==-1){
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'none',
-            duration: 2000
-          })
-        }
-        
-      },
-      fail(){
-        console.log('查询余额失败')
-      }
-    })
-  },
+
   operation: function (event) {
     let category = event.target.dataset.category;
     switch (category) {
       case "recharge":
         console.log("充值")
+        //跳转到充值页面
         wx.navigateTo({
           url: '/pages/recharge/recharge',
         })
         break;
       case "query":
         console.log("查询")
-        this.get_balance();
+        requests.get_elec_balance(self);
         break;
     }
-  },
-  get_balance: function () {
-    var that = this;
-    wx.request({
-      url: server + '/electricity',
-      method: 'POST',
-      data: {
-        a: '2016283414',
-        p: '166236'
-      },
-      header: {
-        'content-type': 'application/json'
-      },
-      success(res) {
-        console.log(res.data)
-        if (res.data.code == 1) {
-          that.setData({
-            balance: res.data.result
-          })
-        }
-        else if (res.data.code == -1) {
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'none',
-            duration: 2000
-          })
-        }
 
-      },
-      fail() {
-        console.log('查询电费余额失败')
-        wx.showToast({
-          title: '查询余额失败',
-          icon: 'none'
-        })
-      }
-    })
   }
 })

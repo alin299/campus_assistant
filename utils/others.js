@@ -1,3 +1,4 @@
+var requests = require('requests.js')
 function operation(category) {
   switch (category) {
     case "timetable":
@@ -8,17 +9,11 @@ function operation(category) {
           console.log(res.tapIndex)
           switch (res.tapIndex) {
             case 0:
-              wx.showLoading({
-                title: '更新中，请稍等',
-              })
-              setTimeout(function () {
-                wx.hideLoading()
-                wx.showToast({
-                  title: '更新完成',
-                })
-              }, 1000)
+              //更新课表
+              update_timetable();
               break;
             case 1:
+              //修改课表
               console.log('点击了'.concat(res.tapIndex))
               wx.showToast({
                 title: '暂未完善',
@@ -33,21 +28,38 @@ function operation(category) {
       break;
     case "score":
       console.log("跳转到成绩查询页面")
+      //跳转到成绩查询页面
       wx.navigateTo({
         url: '/pages/report/report',
       })
       break;
     case "card":
-      this.get_balance();
+      //查询一卡通余额
+      // get_balance();
+      requests.get_balance();
       break;
     case "electricity":
       console.log("跳转到宿舍电费页面")
+      //跳转到宿舍电费页面
       wx.navigateTo({
         url: '/pages/electricity/electricity',
       })
       break;
   }
 }
+//从服务器更新课程表数据
+function update_timetable(){
+  wx.showLoading({
+    title: '更新中，请稍等',
+  })
+  setTimeout(function () {
+    wx.hideLoading()
+    wx.showToast({
+      title: '更新完成',
+    })
+  }, 1000)
+}
+//获取一卡通余额
 function get_balance() {
   var that = this;
   wx.showLoading({
