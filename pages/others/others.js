@@ -1,4 +1,5 @@
 var server = getApp().globalData.server
+var others = require('../../utils/others.js')
 Page({
 
   /**
@@ -12,7 +13,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      
   },
 
   /**
@@ -62,19 +62,22 @@ Page({
    */
   onShareAppMessage: function () {
 
+  }, operation222: function (event) {
+    let category = event.target.dataset.category;
+    others.operation(category);
   },
   operation: function (event) {
     // console.log(event)
     let category = event.target.dataset.category;
     // console.log(category)
-    switch(category){
+    switch (category) {
       case "timetable":
         console.log("跳转到课程表修改页面")
         wx.showActionSheet({
           itemList: ['更新课表', '修改课表'],
           success(res) {
             console.log(res.tapIndex)
-            switch(res.tapIndex){
+            switch (res.tapIndex) {
               case 0:
                 wx.showLoading({
                   title: '更新中，请稍等',
@@ -118,6 +121,9 @@ Page({
   },
   get_balance: function () {
     var that = this;
+    wx.showLoading({
+      title: '查询中',
+    })
     wx.request({
       url: server + '/balance',
       method: 'POST',
@@ -131,6 +137,7 @@ Page({
       success(res) {
         console.log(res.data)
         if (res.data.code == 1) {
+          wx.hideLoading();
           wx.showModal({
             title: '提示',
             content: '您的一卡通余额为：'.concat(res.data.result),

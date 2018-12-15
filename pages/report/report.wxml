@@ -15,17 +15,19 @@
     <button class='query' catchtap='query'>查询</button>
   </view>
 </view>
-<view class="table">
-  <view class="tr bg-w">
-    <view class="th">学科</view>
-    <!-- <view class="td">|</view> -->
-    <view class="th">成绩</view>
-  </view>
-  <block wx:for="{{scores}}">
-    <view class="tr bg-g">
-      <view class="td">{{item.lesson_name}}</view>
+<scroll-view scroll-y style='height:1000rpx;'>
+  <view class="table">
+    <view class="tr bg-w">
+      <view class="th">学科</view>
       <!-- <view class="td">|</view> -->
-      <view class="td score">{{item.score}}</view>
+      <view class="th">成绩</view>
     </view>
-  </block>
-</view>
+    <block wx:for="{{scores}}">
+      <view class="tr bg-g">
+        <view class="td">{{item.lesson_name}}</view>
+        <!-- <view class="td">|</view> -->
+        <view class="td score">{{item.score}}</view>
+      </view>
+    </block>
+  </view>
+</scroll-view>

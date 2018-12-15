@@ -1,0 +1,30 @@
+/* pages/bind/bind.wxss */
+page{
+  height: 100%;
+  background: rgba(228, 228, 228, 0.493);
+  overflow-y: hidden;
+}
+.form{
+  margin: 40rpx 20rpx;
+  background: white;
+  box-shadow: 0 0 5px gray;
+  border-radius: 10px;
+}
+.item{
+  margin: 0 20rpx;
+  padding: 0 40rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: flex-end;
+  border-bottom: 0.7px rgba(207, 207, 207, 0.904) solid;
+}
+input{
+  margin-bottom: 20rpx;
+  width: 100%;
+}
+button{
+  margin-top: 200rpx; 
+  color: white;
+  background: #477ee4;
+  width: 80%;
+}

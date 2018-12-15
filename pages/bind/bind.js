@@ -1,18 +1,18 @@
-// pages/me/me.js
+// pages/bind/bind.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.get_info();
   },
 
   /**
@@ -63,35 +63,27 @@ Page({
   onShareAppMessage: function () {
 
   },
-  operation: function (event) {
-    console.log(event)
-    let category = event.target.dataset.category;
-    console.log(category)
-    switch (category) {
-      case "bind":
-        console.log("跳转到绑定页面")
-        wx.navigateTo({
-          url: '/pages/bind/bind',
-        })
-        break;
-      case "setting":
-        console.log("跳转到设置页面")
-        wx.navigateTo({
-          url: '/pages/others/others',
-        })
-        break;
-      case "feedback":
-        console.log("跳转到反馈页面")
-        wx.navigateTo({
-          url: '/pages/others/others',
-        })
-        break;
-      case "about":
-        console.log("跳转到关于页面")
-        wx.navigateTo({
-          url: '/pages/others/others',
-        })
-        break;
+  get_info: function (key) {
+    var that = this;
+    let obj = {};
+    try {
+      obj = wx.getStorage({
+        key: 'info',
+        success: function(res) {
+          that.setData({
+            info: res.data,
+          });
+        },
+      })
+    } catch (e) {
+      // none
     }
+  },
+  bind: function(event) {
+    let value = event.detail.value;
+    wx.setStorageSync('info', value);
+    wx.showToast({
+      title: '绑定成功',
+    })
   }
 })

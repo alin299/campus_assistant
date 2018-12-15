@@ -1,0 +1,17 @@
+<form bindsubmit="bind">
+  <!--pages/bind/bind.wxml-->
+  <view class='form'>
+    <view class='item' >
+      <input name='a' placeholder='学号' type='idcard' value='{{info.a}}'></input>
+    </view>
+    <view class='item'>
+      <input name='sp' placeholder='一卡通密码' password='true' value='{{info.sp}}'></input>
+    </view>
+    <view class='item'>
+      <input name='p' placeholder='教务系统密码' password='true' value='{{info.p}}'></input>
+    </view>
+  </view>
+  <view class='confirm'>
+    <button form-type='submit'>绑定</button>
+  </view>
+</form>

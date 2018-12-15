@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    term: [['2016-2017', '2016-2018'], ['1', '2']],
+    term: [['2016-2017', '2017-2018'], ['1', '2']],
     multiIndex: [0, 1],
   },
 
@@ -20,6 +20,18 @@ Page({
         { lesson_name: '数学', score: '99'},
         { lesson_name: '语文', score: '99' },
         { lesson_name: '英语', score: '99' },
+        { lesson_name: '数学', score: '99' },
+        { lesson_name: '语文', score: '992' },
+        { lesson_name: '英语', score: '99' },
+        { lesson_name: '数学', score: '99' },
+        { lesson_name: '语文', score: '993' },
+        { lesson_name: '英语', score: '99' },
+        { lesson_name: '数学', score: '99' },
+        { lesson_name: '语文', score: '992' },
+        { lesson_name: '英语', score: '993' },
+        { lesson_name: '数学', score: '99' },
+        { lesson_name: '语文', score: '993' },
+        { lesson_name: '英语', score: '9a9' },
       ]
     })
   },

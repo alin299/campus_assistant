@@ -1,4 +1,7 @@
 /* pages/report/report.wxss */
+page{
+  overflow-y: hidden;
+}
 .search_bar{
   display: flex;
   flex-direction: row;
