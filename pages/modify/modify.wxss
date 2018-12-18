@@ -1,0 +1,56 @@
+/* pages/modify/modify.wxss */
+page{
+  height: 100%;
+  background: rgba(228, 228, 228, 0.493);
+  overflow-y: hidden;
+}
+.head{
+  margin: 20rpx;
+  color: gray;
+}
+.form{
+  /* margin: 40rpx 20rpx; */
+  margin: 0 10rpx;
+  padding: 10rpx 0;
+  background: white;
+  box-shadow: 0 0 5px gray;
+  border-radius: 10px;
+}
+.info{
+  display: flex;
+  align-items: center;
+  margin: 0rpx 30rpx;
+  padding: 20rpx 0;
+  border-bottom: 0.7px rgba(207, 207, 207, 0.904) solid;
+}
+input{
+  display: inline-block;
+  margin-left: 40rpx;
+}
+picker{
+  margin-left: 40rpx;
+}
+.none{
+  visibility: hidden;
+}
+button{
+  margin-top: 200rpx; 
+  color: white;
+  background: #477ee4;
+  width: 80%;
+}
+.foot{
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.foot .content{
+  border-radius: 10px 10px 0 0;
+  background: rgb(179, 179, 179);
+  width: 30%;
+  height: 50rpx;
+  text-align: center;
+}

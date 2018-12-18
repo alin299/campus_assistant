@@ -1,24 +1,18 @@
-// pages/search/search.js
+// pages/me/about/about.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    books:[
-      {
-        imgsrc: '/images/1.jpg',
-        name:'武动乾坤'
-      },
-    ]
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var that = this;
-    // that.search()
+
   },
 
   /**
@@ -46,7 +40,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    
+
   },
 
   /**
@@ -68,28 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  search: function(n){
-    var that = this;
-    console.log('搜索')
-    wx.request({
-      url: 'http://127.0.0.1:8000/book/',
-      data: {
-        name:n
-      },
-      header: {
-        'content-type': 'application/json'
-      },
-      success(res) {
-        console.log(res.data)
-        that.setData({
-          books: res.data.books
-        })
-      }
-    })
-  }, 
-  formSubmit: function (e) {
-    console.log(e.detail.value.input)
-    this.search(e.detail.value.input)
   }
 })

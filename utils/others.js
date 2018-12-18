@@ -1,5 +1,8 @@
 var requests = require('requests.js')
-function operation(category) {
+function load(){
+  requests.load();
+}
+function operation(self,category) {
   switch (category) {
     case "timetable":
       console.log("跳转到课程表修改页面")
@@ -10,7 +13,7 @@ function operation(category) {
           switch (res.tapIndex) {
             case 0:
               //更新课表
-              update_timetable();
+              update_timetable(self);
               break;
             case 1:
               //修改课表
@@ -48,10 +51,11 @@ function operation(category) {
   }
 }
 //从服务器更新课程表数据
-function update_timetable(){
+function update_timetable(self){
   wx.showLoading({
     title: '更新中，请稍等',
   })
+  requests.get_courses(self);
   setTimeout(function () {
     wx.hideLoading()
     wx.showToast({
@@ -109,5 +113,6 @@ function get_balance() {
   })
 }
 module.exports = {
+  load: load,
   operation: operation
 }

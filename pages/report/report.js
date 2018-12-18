@@ -1,5 +1,4 @@
-var server = getApp().globalData.server
-var get_score = require('../../utils/requests.js').get_score
+var requests = require('../../utils/requests.js')
 var self = this;
 // pages/report/report.js
 Page({
@@ -30,11 +29,7 @@ Page({
         { lesson_name: '语文', score: '993' },
         { lesson_name: '英语', score: '99' },
         { lesson_name: '数学', score: '99' },
-        { lesson_name: '语文', score: '992' },
-        { lesson_name: '英语', score: '993' },
-        { lesson_name: '数学', score: '99' },
-        { lesson_name: '语文', score: '993' },
-        { lesson_name: '英语', score: '9a9' },
+        { lesson_name: '语文', score: '992' }
       ]
     })
   },
@@ -43,14 +38,14 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+  
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    requests.load();
   },
 
   /**
@@ -98,6 +93,6 @@ Page({
     let term = this.data.term;
     let index = this.data.multiIndex;
     console.log(term[0][index[0]] + ' ' + term[1][index[1]]);
-    get_score(self,term[0][index[0]], term[1][index[1]]);
+    requests.get_score(self,term[0][index[0]], term[1][index[1]]);
   }
 })

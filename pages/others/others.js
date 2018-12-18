@@ -1,5 +1,5 @@
-var server = getApp().globalData.server;
 var others = require('../../utils/others.js');
+var self;
 Page({
 
   /**
@@ -13,6 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    self = this;
   },
 
   /**
@@ -26,7 +27,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    others.load();
   },
 
   /**
@@ -65,7 +66,7 @@ Page({
   }, 
   operation: function (event) {
     let category = event.target.dataset.category;
-    others.operation(category);
+    others.operation(self,category);
   
   }
 })

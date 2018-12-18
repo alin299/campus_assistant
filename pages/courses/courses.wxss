@@ -1,50 +1,12 @@
-.head{
-  width: 100%;
+.item{
+  margin: 20rpx 20rpx 0;
+  padding: 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: 0 0 10px gainsboro;
 }
-#month{
-  font-size: 0.5rem;
-}
-.head .day{
+button{
+  margin: 10rpx;
   display: inline-block;
-  width: 13.5%;
-  outline: 1px black dashed;
-}
-.body{
-  display: flex;
-  flex-direction: row;
-}
-.body .left{
-  width: 5%;
-  height: 100rpx;
-}
-.body .time{
-  display: flex;
-  align-items: center;
-  outline: 1px saddlebrown dashed;
-  height: 100rpx;
-  background-color: yellow;
-}
-.body .time view{
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.body .table{
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 800rpx;
-}
-.body .table .day{
-  height: 800rpx;
-  display: flex;
-  flex-direction: column;
-  width: 14.27%;
-  outline: 1px saddlebrown dashed;
-}
-.course_item{
-  width: 100%;
-  height: 12.5%;
-  outline: 1px black solid;
 }

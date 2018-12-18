@@ -1,21 +1,23 @@
 // pages/courses/courses.js
+import { DB } from '../../utils/db.js'
+var db;
+var self; 
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    month:'11月',
-    day:['一','二','三','四','五','六','日'],
-    time:[1,2,3,4,5,6,7,8],
-    courses: [['1,1', '1,2'], ['2,1', '3,2']]
+    day: ['一', '二', '三', '四', '五', '六', '日']
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    self = this;
+    db = new DB(this)
+    db.get_all_courses();
   },
 
   /**

@@ -1,7 +1,9 @@
 {
   "pages":[
     "pages/timetable/timetable",
+    "pages/modify/modify",
     "pages/me/me",
+    "pages/me/about/about",
     "pages/bind/bind",
     "pages/recharge/recharge",
     "pages/report/report",
@@ -20,15 +22,21 @@
     "list": [
       {
         "pagePath": "pages/timetable/timetable",
-        "text": "课表"
+        "text": "课表",
+        "iconPath": "images/calendar0.png",
+        "selectedIconPath": "images/calendar1.png"
       },
       {
         "pagePath": "pages/others/others",
-        "text": "其他"
+        "text": "其他",
+        "iconPath": "images/compass0.png",
+        "selectedIconPath": "images/compass1.png"
       },
       {
         "pagePath": "pages/me/me",
-        "text": "我"
+        "text": "我",
+        "iconPath": "images/github0.png",
+        "selectedIconPath": "images/github1.png"
       }
     ]
   },

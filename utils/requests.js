@@ -1,9 +1,39 @@
 /*
 将小程序中的所有请求整理到这
 */
+import {DB} from 'db.js';
 var server = getApp().globalData.server;
+var obj;
+var account;
+var password;
+var spassword;
+//重新获取账号数据
+function load(){
+  obj = wx.getStorageSync('info');
+  account = obj.a;
+  password = obj.p;
+  spassword = obj.sp;
+  console.log('重新获取账号数据');
+}
 //向服务器获取一卡通余额
 function get_balance() {
+  if (account == null || spassword == null) {
+    wx.showModal({
+      title: '提示',
+      content: '尚未绑定账号',
+      confirmText: '绑定',
+      success(res) {
+        if (res.confirm) {
+          wx.navigateTo({
+            url: '/pages/bind/bind',
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+    return;
+  }
   wx.showLoading({
     title: '查询中',
   })
@@ -11,8 +41,8 @@ function get_balance() {
     url: server + '/balance',
     method: 'POST',
     data: {
-      a: '2016283414',
-      p: '166236'
+      a: account,
+      p: spassword
     },
     header: {
       'content-type': 'application/json'
@@ -52,14 +82,32 @@ function get_balance() {
 }
 //请求成绩
 function get_score(self,year, term) {
-  var that = this;
-  console.log('test');
+  if(account==null || password==null){
+    wx.showModal({
+      title: '提示',
+      content: '尚未绑定账号',
+      confirmText: '绑定',
+      success(res) {
+        if (res.confirm) {
+          wx.navigateTo({
+            url: '/pages/bind/bind',
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+    return;
+  }
+  wx.showLoading({
+    title: '查询中，请稍等',
+  })
   wx.request({
     url: server + '/score',
     method: 'POST',
     data: {
-      a: '2016283414',
-      p: '166236',
+      a: account,
+      p: password,
       year: year,
       term: term
     },
@@ -67,6 +115,7 @@ function get_score(self,year, term) {
       'content-type': 'application/json'
     },
     success(res) {
+      wx.hideLoading();
       console.log(res.data)
       if (res.data.code == 1) {
         self.setData({ 
@@ -93,12 +142,29 @@ function get_score(self,year, term) {
 }
 //查电费
 function get_elec_balance(self) {
+  if (account == null || spassword == null) {
+    wx.showModal({
+      title: '提示',
+      content: '尚未绑定账号',
+      confirmText: '绑定',
+      success(res) {
+        if (res.confirm) {
+          wx.navigateTo({
+            url: '/pages/bind/bind',
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+    return;
+  }
   wx.request({
     url: server + '/electricity',
     method: 'POST',
     data: {
-      a: '2016283414',
-      p: '166236'
+      a: account,
+      p: spassword
     },
     header: {
       'content-type': 'application/json'
@@ -128,8 +194,31 @@ function get_elec_balance(self) {
     }
   })
 }
+//从服务器获取课程
+function get_courses(self) {
+  wx.request({
+    url: server + '/courses',
+    data: {
+      a: account,
+      p: password
+    },
+    header: {
+      'content-type': 'application/json'
+    },
+    success(res) {
+      console.log(res.data.courses)
+      self.setData({
+        'courses': res.data.courses
+      })
+      var db = new DB();
+      db.set_storage(res.data.courses)
+    }
+  })
+}
 module.exports = {
+  load: load,
   get_balance: get_balance,
   get_score: get_score,
-  get_elec_balance:get_elec_balance
+  get_elec_balance:get_elec_balance,
+  get_courses: get_courses
 }

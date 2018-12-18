@@ -1,5 +1,9 @@
 <view class='top'>
-  <view class='week'>12周</view>
+  <view class='week'>
+    <picker bindchange="bindPickerChange" value="{{week-1}}" range="{{array}}">
+      <view class="picker"><text>{{array[week-1]}}</text><text>周</text></view>
+    </picker>
+  </view>
   <view class='right'>
     <view class='day' wx:for="{{['一','二','三','四','五','六','日']}}">{{item}}</view>
   </view>
@@ -11,7 +15,7 @@
     </view>
   </view>
   <view class='table'>
-    <view wx:for="{{courses}}" style="margin-left:{{(item.day-1)*50+5}}px;margin-top:{{(item.start-1)*100+5}}rpx;height:{{item.step*100-5}}rpx;background-color:{{colors[index%10]}};" class='course_item'>
+    <view wx:for="{{courses}}" style="margin-left:{{(item.day-1)*50+5}}px;margin-top:{{(item.start-1)*100+5}}rpx;height:{{item.step*100-5}}rpx;background-color:{{colors[index%10]}};" class='course_item' bindlongpress='modify'>
         {{item.name}}{{item.place}}
     </view>
   </view>

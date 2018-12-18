@@ -1,0 +1,39 @@
+<!--pages/modify/modify.wxml-->
+<view class='head'>填写课程信息</view>
+<form bindsubmit="add">
+  <view class='form'>
+    <view class='name info'>课程名<input name='name'></input></view>
+    <view class='place info'>地点<text class='none'>....</text><input  name='place'></input></view>
+    <view class='time info'>时间<text class='none'>....</text>
+      <picker mode="multiSelector" bindchange="bindTimeChange"
+      value="{{multiIndex}}" range="{{time}}">
+      <view class="picker">
+        <span class='tip'>{{time[0][multiIndex[0]]}}</span>
+        <text class='none'>...</text>
+        <span class='tip'>{{time[1][multiIndex[1]]}}</span>
+        <span>-</span>
+        <span class='tip'>{{time[2][multiIndex[2]]}}</span>
+      </view>
+      </picker>
+    </view>
+    <view class='week info'>周期<text class='none'>....</text>
+      <picker mode="multiSelector" bindchange="bindWeekChange"
+      value="{{multiIndex2}}" range="{{week}}">
+      <view class="picker">
+        <span class='tip'>{{week[0][multiIndex2[0]]}}</span>
+        <span>-</span>
+        <span class='tip'>{{week[1][multiIndex2[1]]}}</span>
+        <span>周</span><span class='none'>..</span>
+        <block wx:if="{{multiIndex2[2]!=0}}">
+          <span class='tip'>{{week[2][multiIndex2[2]]}}</span>
+        </block>
+      </view>
+      </picker>
+    </view>
+    <view class='teacher info'>教师<text class='none'>....</text><input name='teacher'></input></view>
+  </view>
+  <view class='confirm'>
+      <button form-type='submit'>添加</button>
+  </view>
+</form>
+<view class='foot'><view class='content' catchtap='jump'>已添加课程</view></view>

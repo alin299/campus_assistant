@@ -77,19 +77,19 @@ Page({
       case "setting":
         console.log("跳转到设置页面")
         wx.navigateTo({
-          url: '/pages/others/others',
+          url: '/pages/me/about/about',
         })
         break;
       case "feedback":
         console.log("跳转到反馈页面")
         wx.navigateTo({
-          url: '/pages/others/others',
+          url: '/pages/me/about/about',
         })
         break;
       case "about":
         console.log("跳转到关于页面")
         wx.navigateTo({
-          url: '/pages/others/others',
+          url: '/pages/me/about/about',
         })
         break;
     }
