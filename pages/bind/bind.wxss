@@ -11,12 +11,20 @@ page{
   border-radius: 10px;
 }
 .item{
+  position: relative;
   margin: 0 20rpx;
   padding: 0 40rpx;
   height: 100rpx;
   display: flex;
   align-items: flex-end;
   border-bottom: 0.7px rgba(207, 207, 207, 0.904) solid;
+}
+.animation{
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: 20rpx;
+  color: rgb(133, 131, 131);
+  opacity: 0;
 }
 input{
   margin-bottom: 20rpx;

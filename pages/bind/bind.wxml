@@ -2,13 +2,19 @@
   <!--pages/bind/bind.wxml-->
   <view class='form'>
     <view class='item' >
-      <input name='a' placeholder='学号' type='idcard' value='{{info.a}}'></input>
+      <view class='animation' animation="{{animationData0}}">学号</view>
+      <input name='a' placeholder='{{tip[0]}}' type='idcard' value='{{info.a}}'
+      bindfocus='fadeIn' bindblur='fadeOut' data-index='0'></input>
     </view>
     <view class='item'>
-      <input name='sp' placeholder='一卡通密码' password='true' value='{{info.sp}}'></input>
+      <view class='animation' animation="{{animationData1}}">一卡通密码</view>
+      <input name='sp' placeholder='{{tip[1]}}' password='true' value='{{info.sp}}'
+      bindfocus='fadeIn' bindblur='fadeOut' data-index='1'></input>
     </view>
     <view class='item'>
-      <input name='p' placeholder='教务系统密码' password='true' value='{{info.p}}'></input>
+      <view class='animation' animation="{{animationData2}}">教务密码</view>
+      <input name='p' placeholder='{{tip[2]}}' password='true' value='{{info.p}}
+      bindfocus='fadeIn' bindblur='fadeOut' data-index='2'></input>
     </view>
   </view>
   <view class='confirm'>
