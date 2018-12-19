@@ -9,3 +9,6 @@
   box-sizing: border-box;
   background: rgba(228, 228, 228, 0.493);
 } 
+page{
+  background: rgba(228, 228, 228, 0.493);
+}

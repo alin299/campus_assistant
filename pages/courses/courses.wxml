@@ -1,12 +1,12 @@
 <view>
   <view>已添加的课程</view>
-  <block wx:for="{{courses}}">
+  <block wx:for="{{courses}}" wx:>
     <view class='item'>
       <view>
       <view>{{item.name}}/{{item.teacher}}</view>
       <view>周{{day[item.day-1]}}{{item.start}}-{{item.start+item.step-1}}</view>
     </view>
-    <button>删除</button>
+    <button data-id='{{index}}' bindtap='delete'>删除</button>
     </view>
   </block>
 </view>

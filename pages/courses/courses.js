@@ -67,5 +67,16 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  delete: function(event){
+    //删除课程
+    self.data.courses.pop(event.currentTarget.dataset.id);
+    console.log(self.data.courses);
+    //更新课表缓存
+    db.set_storage(self.data.courses);
+    //重新加载页面中课表数据
+    this.setData({
+      courses: self.data.courses
+    })
   }
 })

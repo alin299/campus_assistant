@@ -18,9 +18,8 @@ function operation(self,category) {
             case 1:
               //修改课表
               console.log('点击了'.concat(res.tapIndex))
-              wx.showToast({
-                title: '暂未完善',
-                icon: 'none'
+              wx.navigateTo({
+                url: '/pages/courses/courses',
               })
           }
         },

@@ -1,0 +1,16 @@
+/* pages/setting/setting.wxss */
+.item{
+  box-shadow: 0 0 5px rgba(228, 228, 228, 0.493);
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 20rpx;
+}
+page::before{
+  content: '.';
+  visibility: hidden;
+  background: yellow;
+  margin-top: 20rpx;
+}

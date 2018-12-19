@@ -1,0 +1,13 @@
+<!--pages/setting/setting.wxml-->
+<view class='item'>
+  <text>隐藏周末</text>
+  <switch color='#FF6347'></switch>
+</view>
+<view class='item'>
+  <text>隐藏非本周课程</text>
+  <switch checked='true' color='#FF6347'></switch>
+</view>
+<view class='item'>
+  <text>一键原谅</text>
+  <switch checked='true'></switch>
+</view>

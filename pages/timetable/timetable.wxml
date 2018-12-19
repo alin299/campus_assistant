@@ -14,7 +14,7 @@
       {{item}}
     </view>
   </view>
-  <view class='table'>
+  <view class='table' bindlongpress='modify'>
     <view wx:for="{{courses}}" style="margin-left:{{(item.day-1)*50+5}}px;margin-top:{{(item.start-1)*100+5}}rpx;height:{{item.step*100-5}}rpx;background-color:{{colors[index%10]}};" class='course_item' bindlongpress='modify'>
         {{item.name}}{{item.place}}
     </view>
