@@ -3,6 +3,7 @@ page{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: white;
 }
 .logo{
   display: flex;
