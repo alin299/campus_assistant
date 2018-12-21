@@ -14,10 +14,11 @@ class DB{
   get_timetable(){
     var data = wx.getStorageSync('timetable');
     if(!data){
+      requests.load();
       requests.get_courses(this.that);
     }
     var week = this.get_week();
-    // console.log('获取第'+week+'周的课表')
+    console.log('获取第'+week+'周的课表')
     var weeks;
     var courses = [];
     for(var key in data){
@@ -57,6 +58,41 @@ class DB{
       data = [];
     data.push(value);
     this.set_storage(data);
+  }
+  load_dormitory(){
+    var multiIndex = this.get_dormitory();
+    var dormitory_array = [[],[],[]];
+    for (let i = 1; i < 26; i++) {
+      dormitory_array[0].push(i+'');
+    }
+    dormitory_array[1] = ['01','02','03','04','05','06'];
+    for (let i = 1; i <= 26; i++) {
+      if(i>9)
+        dormitory_array[2][i - 1] = multiIndex[1]+1+''+i;
+      else
+        dormitory_array[2][i - 1] = multiIndex[1] + 1 + '' + 0 + i;                              
+    }
+    this.that.setData({
+      multiIndex: multiIndex,
+      dormitory_array: dormitory_array
+    })
+  }
+  set_dormitory(value){
+    wx.setStorage({
+      key: 'dormitory',
+      data: value,
+    });
+    wx.setStorage({
+      key: 'dormitory',
+      data: value,
+    });
+  }
+  get_dormitory(){
+    var value = wx.getStorageSync('dormitory');
+    if(value)
+      return value.multiIndex;
+    else
+      return [0,0,0];
   }
 }
 export{DB}

@@ -118,7 +118,7 @@ Page({
     }
     else{
       animation.opacity(1).translateY(-40 / 750 * systemInfo.windowWidth).step();
-      tip[index] = '';
+      tip[index] = '   ';
       json[param2] = tip;
     }
     json[param1] = animation.export()

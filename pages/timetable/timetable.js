@@ -12,7 +12,8 @@ Page({
     day: ['一', '二', '三', '四', '五', '六', '日'],
     colors: ['#FFFACD', '#D8BFD8', '#DB7093', '#B0C4DE', '#87CEFA', '#ADD8E6', '#E6E6FA', '#FF7F50', '#DCDCDC','#6495ED'],
     array: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],
-    index: 0
+    index: 0,
+    week: 1
   },
 
   /**
@@ -21,10 +22,6 @@ Page({
   onLoad: function (options) {
     self = this;
     db = new DB(self);
-    var windowWidth = wx.getSystemInfoSync().windowWidth;
-    this.setData({
-      windowWidth: windowWidth
-    })
   },
 
   /**

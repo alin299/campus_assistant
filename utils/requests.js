@@ -3,16 +3,24 @@
 */
 import {DB} from 'db.js';
 var server = getApp().globalData.server;
-var obj;
+var info;
+var dormitory;
 var account;
 var password;
 var spassword;
+var area;
+var floor;
+var room;
 //重新获取账号数据
 function load(){
-  obj = wx.getStorageSync('info');
-  account = obj.a;
-  password = obj.p;
-  spassword = obj.sp;
+  info = wx.getStorageSync('info');
+  dormitory = wx.getStorageSync('dormitory');
+  account = info.a;
+  password = info.p;
+  spassword = info.sp;
+  area = dormitory.area;
+  floor = dormitory.floor;
+  room = dormitory.room;
   console.log('重新获取账号数据');
 }
 //向服务器获取一卡通余额
@@ -159,12 +167,32 @@ function get_elec_balance(self) {
     })
     return;
   }
+  if (area == null || floor == null || room == null) {
+    wx.showModal({
+      title: '提示',
+      content: '尚未绑定寝室',
+      confirmText: '绑定',
+      success(res) {
+        if (res.confirm) {
+          wx.navigateTo({
+            url: '/pages/bind/bind',
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+    return;
+  }
   wx.request({
     url: server + '/electricity',
     method: 'POST',
     data: {
       a: account,
-      p: spassword
+      p: spassword,
+      area: area,
+      floor: floor,
+      room: room
     },
     header: {
       'content-type': 'application/json'
@@ -198,6 +226,7 @@ function get_elec_balance(self) {
 function get_courses(self) {
   wx.request({
     url: server + '/courses',
+    method: 'POST',
     data: {
       a: account,
       p: password
@@ -206,12 +235,21 @@ function get_courses(self) {
       'content-type': 'application/json'
     },
     success(res) {
-      console.log(res.data.courses)
-      self.setData({
-        'courses': res.data.courses
-      })
-      var db = new DB();
-      db.set_storage(res.data.courses)
+      if (res.data.courses){
+        console.log(res.data.courses)
+      }
+      if (res.data.code == 1){
+        // self.setData({
+        //   'courses': res.data.result
+        // })
+        var db = new DB();
+        db.set_storage(res.data.result)
+      }else{
+        wx.showToast({
+          title: '课表获取失败，请检查账号密码等',
+          icon: 'none'
+        });
+      }
     }
   })
 }
