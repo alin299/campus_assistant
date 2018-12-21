@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/timetable/timetable",
+    "pages/library/library",
     "pages/setting/setting",
     "pages/modify/modify",
     "pages/me/me",

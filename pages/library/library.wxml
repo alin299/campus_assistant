@@ -1,0 +1,14 @@
+<!--pages/library/library.wxml-->
+<view class='head'>
+  <input class='search-box' placeholder='输入要查找的书名'></input>
+  <button>搜索</button>
+</view>
+<block wx:for='{{books}}'>
+  <view class='item'>
+    <image src='/images/library/book.jpg'></image>
+    <view class='detail'>
+      <text>{{item.name}}</text>
+      <text>{{item.info}}</text>
+    </view>
+  </view>
+</block>
