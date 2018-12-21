@@ -31,3 +31,18 @@ page{
   margin-bottom: 40rpx;
   background: rgba(81, 206, 228, 0.918);
 }
+.foot{
+  margin-top: 100rpx;
+  display: flex;
+  flex-direction: row;
+  color: gray;
+  justify-content: center;
+  align-items: center;
+}
+.foot .picker{
+  display: flex;
+  width: 50%;
+}
+.picker view{
+  border-bottom: 1px rgb(207, 29, 29) solid;
+}

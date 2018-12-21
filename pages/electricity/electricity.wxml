@@ -6,3 +6,16 @@
   <button data-category='recharge'>充值</button>
   <button data-category='query'>查询</button>
 </view>
+<view class='foot'>
+  <picker
+    mode="multiSelector"
+    bindchange="bindMultiPickerChange"
+    bindcolumnchange="bindcolumnchange"
+    value="{{multiIndex}}"
+    range="{{dormitory_array}}">
+    <view class="picker">
+      <view class='area'>{{dormitory_array[0][multiIndex[0]]}}#</view>
+      <view class='room'>{{dormitory_array[2][multiIndex[2]]}}</view>
+    </view>
+    </picker>
+</view>

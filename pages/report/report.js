@@ -22,14 +22,7 @@ Page({
         { lesson_name: '数学', score: '99'},
         { lesson_name: '语文', score: '99' },
         { lesson_name: '英语', score: '99' },
-        { lesson_name: '数学', score: '99' },
-        { lesson_name: '语文', score: '992' },
-        { lesson_name: '英语', score: '99' },
-        { lesson_name: '数学', score: '99' },
-        { lesson_name: '语文', score: '993' },
-        { lesson_name: '英语', score: '99' },
-        { lesson_name: '数学', score: '99' },
-        { lesson_name: '语文', score: '992' }
+        { lesson_name: '数学', score: '99' }
       ]
     })
   },
