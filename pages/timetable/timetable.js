@@ -8,20 +8,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    time: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    day: ['一', '二', '三', '四', '五', '六', '日'],
     colors: ['#FFFACD', '#D8BFD8', '#DB7093', '#B0C4DE', '#87CEFA', '#ADD8E6', '#E6E6FA', '#FF7F50', '#DCDCDC','#6495ED'],
     array: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],
-    index: 0,
-  //   courses: [
-  //     { start: 1, step: 2, day: 1, name: "计算机组成@12-505" },
-  //     { start: 5, step: 2, day: 1, name: "操作系统@32-307" },
-  //     { start: 3, step: 2, day: 2, name: "移动应用开发@31-402" },
-  //     { start: 5, step: 2, day: 2, name: "单片机实验@31" },
-  //     { start: 1, step: 2, day: 3, name: "单片机原理及应用@33-B306" },
-  //     { start: 3, step: 2, day: 3, name: "计算机组成@32-502" },
-  //     { start: 1, step: 2, day: 4, name: "移动应用开发@31-402" },
-  //     { start: 1, step: 2, day: 5, name: "数据库实验@31-402" },
-  //     { start: 3, step: 2, day: 5, name: "操作系统@8-101" }
-  //   ]
+    index: 0
   },
 
   /**
@@ -30,24 +21,17 @@ Page({
   onLoad: function (options) {
     self = this;
     db = new DB(self);
+    var windowWidth = wx.getSystemInfoSync().windowWidth;
+    this.setData({
+      windowWidth: windowWidth
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    // requests.get_courses(self);
-    //改为从缓存加载课表
-    // db = new DB(self);
-    // var data = db.get_timetable();
-    // if(!data){
-    //   console.log('缓存中无数据')
-    //   requests.get_courses(self);
-    // }else{
-    //   this.setData({
-    //     courses: data
-    //   })
-    // }
+    
   },
 
   /**
@@ -55,7 +39,6 @@ Page({
    */
   onShow: function () {
     db.get_timetable();
-    // console.log(db);
   },
 
   /**
@@ -102,15 +85,16 @@ Page({
     this.setData({
       index: e.detail.value
     })
-    this.set_week(self.data.array[self.data.index])
+    this.set_week(self.data.array[self.data.index]);
   },
+  //长按跳转到添加课程界面
   modify: function(){
     wx.vibrateShort({
       complete(){
         wx.navigateTo({
           url: '/pages/modify/modify',
-        })
+        });
       }
-    })
+    });
   }
 })
