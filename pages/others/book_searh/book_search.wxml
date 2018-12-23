@@ -1,0 +1,6 @@
+<!--pages/others/book_searh/book_search.wxml-->
+<view class="page">
+    <view class="page__bd">
+        <wux-search-bar bind:cancel="onCancel" bind:confirm="onCancel" clear maxlength="20" cancelText="搜索"/>
+    </view>
+</view>

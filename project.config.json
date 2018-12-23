@@ -36,12 +36,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 0,
 			"list": [
 				{
 					"id": 0,
 					"name": "2",
-					"pathName": "pages/others/others",
+					"pathName": "pages/others/book_searh/book_search",
 					"query": ""
 				},
 				{
@@ -83,7 +83,8 @@
 				{
 					"id": -1,
 					"name": "setting",
-					"pathName": "pages/setting/setting"
+					"pathName": "pages/setting/setting",
+					"query": ""
 				}
 			]
 		}

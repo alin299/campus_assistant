@@ -10,6 +10,7 @@
     "pages/recharge/recharge",
     "pages/report/report",
     "pages/others/others",
+    "pages/others/book_searh/book_search",
     "pages/electricity/electricity",
     "pages/courses/courses"
   ],
