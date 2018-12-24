@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "SearchBar",
+  "navigationBarTitleText": "图书检索",
   "usingComponents": {
     "wux-search-bar": "../../../dist/search-bar/index"
   }

@@ -7,5 +7,6 @@
   <view class='item2' data-category='electricity'>宿舍电费</view>
 </view>
 <view class='area' bindtap='operation'>
+  <view class='item1' data-category='book_search'>图书检索</view>
   <view class='item2' data-category='news'>师院大事件</view>
 </view>

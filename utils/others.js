@@ -47,6 +47,13 @@ function operation(self,category) {
         url: '/pages/electricity/electricity',
       })
       break;
+    case "book_search":
+      console.log("跳转到图书检索页面")
+      //跳转到宿舍电费页面
+      wx.navigateTo({
+        url: '/pages/others/book_searh/book_search',
+      })
+      break;
   }
 }
 //从服务器更新课程表数据

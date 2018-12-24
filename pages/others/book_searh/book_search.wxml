@@ -3,4 +3,26 @@
     <view class="page__bd">
         <wux-search-bar bind:cancel="onCancel" bind:confirm="onCancel" clear maxlength="20" cancelText="搜索"/>
     </view>
+    <view>
+      <scroll-view scroll-y="true" style="height: 600px;" bindscrolltolower='next_page'>
+        <block wx:for="{{book_list}}">
+        <view class='item'>
+          <image src='{{item.cover}}' binderror="errorFunction" data-index='{{index}}' 
+            mode='scaleToFill'></image>
+          <view class='detail'>
+            <text class='name'>{{item.name}}</text>
+            <view class='other'>
+              <text class='number' style='display:block'>{{item.number}}</text>
+              <text class='author'>{{item.author}}</text>
+              <view class='publishing_info'>
+                <text class='publishing'>{{item.publishing}}</text>
+                <text class='time'>{{item.time}}</text>
+              </view>
+              <text class='storage'>{{item.storage}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+      </scroll-view>
+    </view>
 </view>

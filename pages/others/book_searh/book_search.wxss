@@ -1,1 +1,25 @@
 /* pages/others/book_searh/book_search.wxss */
+.item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: rgb(221, 204, 204);
+  margin: 20rpx 20rpx;
+  border-radius: 10px;
+  box-shadow: 0 0 10px gray;
+}
+.item image{
+  height: 180rpx;
+  width: 120rpx;
+  margin: 30rpx;
+}
+.detail{
+ display: flex;
+ flex-direction: column; 
+ margin: 40rpx 30rpx;
+ font-size: 0.9rem;
+}
+.detail .other{
+  color: rgb(73, 73, 73);
+  font-size: 0.7rem;
+}

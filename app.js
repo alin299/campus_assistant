@@ -32,6 +32,6 @@ App({
   globalData: {
     userInfo: null,
     server1: 'http://127.0.0.1:5000',
-    server: 'http://www.alin299.top:5000'
+    server: 'https://www.alin299.top:5000'
   }
 })
