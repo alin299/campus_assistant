@@ -89,7 +89,8 @@ Page({
         }
       }
     })
-  },//搜索事件
+  },
+  //搜索事件
   onCancel(e) {
     var name = e.detail.value;
     this.setData({

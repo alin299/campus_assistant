@@ -104,10 +104,15 @@ Page({
       case "recharge":
         console.log("充值")
         //跳转到充值页面
-        wx.navigateTo({
-          url: '/pages/recharge/recharge',
+        wx.showToast({
+          title: '敬请期待',
+          icon: 'none'
         })
         break;
+        // wx.navigateTo({
+        //   url: '/pages/recharge/recharge',
+        // })
+        // break;
       case "query":
         console.log("查询")
         requests.load();

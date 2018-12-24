@@ -54,20 +54,17 @@ function operation(self,category) {
         url: '/pages/others/book_searh/book_search',
       })
       break;
+    case "news":
+      wx.showToast({
+        title: '敬请期待',
+        icon: 'none'
+      })
+      break;
   }
 }
 //从服务器更新课程表数据
 function update_timetable(self){
-  wx.showLoading({
-    title: '更新中，请稍等',
-  })
-  requests.get_courses(self);
-  setTimeout(function () {
-    wx.hideLoading()
-    wx.showToast({
-      title: '更新完成',
-    })
-  }, 1000)
+  requests.get_courses(self)
 }
 //获取一卡通余额
 function get_balance() {
@@ -86,9 +83,9 @@ function get_balance() {
       'content-type': 'application/json'
     },
     success(res) {
+      wx.hideLoading();
       console.log(res.data)
       if (res.data.code == 1) {
-        wx.hideLoading();
         wx.showModal({
           title: '提示',
           content: '您的一卡通余额为：'.concat(res.data.result),
@@ -110,6 +107,7 @@ function get_balance() {
 
     },
     fail() {
+      wx.hideLoading();
       console.log('查询余额失败')
       wx.showToast({
         title: '查询余额失败',

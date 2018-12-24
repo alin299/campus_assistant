@@ -46,8 +46,11 @@ class DB{
   //获取当前周
   get_week(){
     var data = wx.getStorageSync('week');
+    var day = wx.getStorageSync('day');
+    var yesterday = wx.getStorageSync('yesterday');
     if (!data) {
       data = 1;
+      this.set_week(1);
     }
     return data;
   }

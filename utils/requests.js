@@ -224,6 +224,9 @@ function get_elec_balance(self) {
 }
 //从服务器获取课程
 function get_courses(self) {
+  wx.showLoading({
+    title: '更新中，请稍等',
+  })
   wx.request({
     url: server + '/courses',
     method: 'POST',
@@ -235,21 +238,26 @@ function get_courses(self) {
       'content-type': 'application/json'
     },
     success(res) {
+      wx.hideLoading();
       if (res.data.courses){
         console.log(res.data.courses)
       }
       if (res.data.code == 1){
-        // self.setData({
-        //   'courses': res.data.result
-        // })
         var db = new DB();
         db.set_storage(res.data.result)
+        wx.showToast({
+          title: '更新完成',
+        })
       }else{
         wx.showToast({
           title: '课表获取失败，请检查账号密码等',
-          icon: 'none'
+          icon: 'none',
+          duration: 2000
         });
       }
+    },
+    fail(res) {
+      wx.hideLoading();
     }
   })
 }
