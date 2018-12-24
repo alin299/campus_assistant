@@ -1,1 +1,7 @@
-{}
+{
+  "navigationBarTitleText": "成绩查询",
+  "usingComponents": {
+    "wux-card": "../../dist/card/index",
+    "wux-wing-blank": "../../dist/wing-blank/index"
+  }
+}

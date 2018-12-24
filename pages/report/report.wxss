@@ -25,23 +25,12 @@ picker{
   height: 80rpx;
 }
 .table{
-  margin: 80rpx;
+  margin: 30rpx;
+}
+.detail text{
+  margin-right: 40rpx;
 }
 .tip{
   color: rgb(96, 132, 240);
   margin-left: 10rpx;
-}
-.tr{
-  display: flex;
-  margin: 60rpx;
-  border-bottom: 0.7px rgba(207, 207, 207, 0.904) solid;
-}
-.td, .th{
-  /* margin: 10rpx 40rpx; */
-  margin: auto;
-}
-.tr>.score::after,.tr>.score::before{
-  content: '. ';
-  visibility: hidden;
-  color: red;
 }

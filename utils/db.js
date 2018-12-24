@@ -1,4 +1,5 @@
-var requests = require('requests.js')
+var requests = require('requests.js');
+var util = require('util.js');
 class DB{
   constructor(self){
     this.that = self;
@@ -42,6 +43,8 @@ class DB{
   //设置当前周
   set_week(week){
     wx.setStorageSync('week', week);
+    console.log(this.weekOfYear());
+    wx.setStorageSync('weekOfYear', this.weekOfYear());
   }
   //获取当前周
   get_week(){
@@ -51,6 +54,10 @@ class DB{
     if (!data) {
       data = 1;
       this.set_week(1);
+    }
+    if(wx.getStorageSync('weekOfYear')<this.weekOfYear()){
+      data += 1;
+      this.set_week(data);
     }
     return data;
   }
@@ -96,6 +103,11 @@ class DB{
       return value.multiIndex;
     else
       return [0,0,0];
+  }
+  weekOfYear(){
+    var date = new Date();
+    var week_year = util.weekOfYear(date.getFullYear(),date.getMonth()+1,date.getDate());
+    return week_year;
   }
 }
 export{DB}
