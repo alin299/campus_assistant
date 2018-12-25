@@ -2,11 +2,22 @@
   <view>已添加的课程</view>
   <block wx:for="{{courses}}" wx:>
     <view class='item'>
+      <wux-wing-blank size="default">
+      <wux-card title="{{item.name}}" extra="{{item.teacher}}">
+          <view slot="body" class='body'>
+            <view>周{{day[item.day-1]}} {{item.start}}-{{item.start+item.step-1}}</view>
+            <button data-id='{{index}}' bindtap='delete'>删除</button>
+          </view>
+          <view slot="footer">{{item.place}}</view>
+      </wux-card>
+    </wux-wing-blank>
+    </view>
+    <!-- <view class='item'>
       <view>
       <view>{{item.name}}/{{item.teacher}}</view>
       <view>周{{day[item.day-1]}}{{item.start}}-{{item.start+item.step-1}}</view>
     </view>
     <button data-id='{{index}}' bindtap='delete'>删除</button>
-    </view>
+    </view> -->
   </block>
 </view>

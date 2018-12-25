@@ -170,16 +170,13 @@ function get_elec_balance(self) {
   if (area == null || floor == null || room == null) {
     wx.showModal({
       title: '提示',
-      content: '尚未绑定寝室',
-      confirmText: '绑定',
+      content: '尚未选择寝室',
+      confirmText: '确定',
+      showCancel: '',
       success(res) {
         if (res.confirm) {
-          wx.navigateTo({
-            url: '/pages/bind/bind',
-          })
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
+          console.log('用户点击确定')
+        } 
       }
     })
     return;

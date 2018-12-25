@@ -70,7 +70,8 @@ Page({
   },
   delete: function(event){
     //删除课程
-    self.data.courses.pop(event.currentTarget.dataset.id);
+    console.log(event.currentTarget.dataset.id)
+    self.data.courses.splice(event.currentTarget.dataset.id,1);
     console.log(self.data.courses);
     //更新课表缓存
     db.set_storage(self.data.courses);

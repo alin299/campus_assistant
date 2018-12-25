@@ -1,1 +1,7 @@
-{}
+{
+  "navigationBarTitleText": "课程",
+  "usingComponents": {
+    "wux-card": "../../dist/card/index",
+    "wux-wing-blank": "../../dist/wing-blank/index"
+  }
+}
