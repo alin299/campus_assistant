@@ -23,8 +23,8 @@
             <view slot="body">
               <view class='detail'>
                 <view><text>成绩:</text>{{item.score}}</view>
-                <view><text>绩点:</text>{{item.credit}}</view>
-                <view><text>学分:</text>{{item.point}}</view>
+                <view><text>绩点:</text>{{item.point}}</view>
+                <view><text>学分:</text>{{item.credit}}</view>
               </view>
             </view>
           </wux-card>

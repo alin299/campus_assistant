@@ -15,6 +15,7 @@ class DB{
   get_timetable(){
     var data = wx.getStorageSync('timetable');
     if(!data){
+      requests = require('requests.js');
       requests.load();
       requests.get_courses(this.that);
     }
