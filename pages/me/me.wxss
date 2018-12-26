@@ -31,3 +31,15 @@ page{
 .item1{
   border-bottom: 0.7px rgba(207, 207, 207, 0.904) solid;
 }
+.feedback{
+  width: 100%;
+  background: white;
+  text-align: left;
+  padding-left: 0;
+  font-size: 1rem;
+}
+.feedback::after{ 
+  border: none; 
+  border-bottom: 0.7px rgba(143, 141, 141, 0.856) solid;
+  border-radius: 0;
+}

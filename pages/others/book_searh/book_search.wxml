@@ -5,7 +5,7 @@
     </view>
     <view>
       <scroll-view scroll-y="true" style="height: 600px;" bindscrolltolower='next_page'>
-        <block wx:for="{{book_list}}">
+        <block wx:for="{{book_list}}"  wx:key="mdzz">
         <view class='item'>
           <image src='{{item.cover}}' binderror="errorFunction" data-index='{{index}}' 
             mode='scaleToFill'></image>

@@ -1,6 +1,6 @@
 <view>
   <view>已添加的课程</view>
-  <block wx:for="{{courses}}" wx:>
+  <block wx:for="{{courses}}"  wx:key="mdzz">
     <view class='item'>
       <wux-wing-blank size="default">
       <wux-card title="{{item.name}}" extra="{{item.teacher}}">

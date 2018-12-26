@@ -7,6 +7,8 @@
   <view class='item2' data-category='setting'>设置</view>
 </view>
 <view class='area' bindtap='operation'>
-  <view class='item1' data-category='feedback'>反馈</view>
+  <view class='item1' data-category='feedback'>
+    <button open-type="contact" class='feedback'>反馈</button>
+  </view>
   <view class='item2' data-category='about'>关于</view>
 </view>

@@ -5,17 +5,17 @@
     </picker>
   </view>
   <view class='right'>
-    <view class='day' wx:for="{{day}}">{{item}}</view>
+    <view class='day' wx:for="{{day}}" wx:key='mdzz'>{{item}}</view>
   </view>
 </view>
 <view class="body" >
   <view>
-    <view wx:for="{{time}}" class="left">
+    <view wx:for="{{time}}" class="left" wx:key='mdzz'>
       {{item}}
     </view>
   </view>
   <view class='table' catchlongpress='modify'>
-    <view wx:for="{{courses}}" style="margin-left:{{(item.day-1)*100+5}}rpx;margin-top:{{(item.start-1)*100+5}}rpx;height:{{item.step*100-5}}rpx;background-color:{{colors[index%10]}};" class='course_item' catchlongpress='modify'>
+    <view wx:for="{{courses}}" style="margin-left:{{(item.day-1)*100+5}}rpx;margin-top:{{(item.start-1)*100+5}}rpx;height:{{item.step*100-5}}rpx;background-color:{{colors[index%10]}};" class='course_item' catchlongpress='modify' wx:key='mdzz'>
         {{item.name}}{{item.place}}
     </view>
   </view>

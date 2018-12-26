@@ -37,12 +37,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 5,
 			"list": [
 				{
 					"id": 0,
 					"name": "2",
-					"pathName": "pages/courses/courses",
+					"pathName": "pages/others/book_searh/book_search",
 					"query": ""
 				},
 				{
@@ -70,9 +70,9 @@
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "c",
-					"pathName": "pages/courses/courses",
+					"id": 5,
+					"name": "a",
+					"pathName": "pages/me/about/about",
 					"query": ""
 				},
 				{
@@ -82,9 +82,9 @@
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "setting",
-					"pathName": "pages/setting/setting",
+					"id": 7,
+					"name": "me",
+					"pathName": "pages/me/me",
 					"query": ""
 				}
 			]

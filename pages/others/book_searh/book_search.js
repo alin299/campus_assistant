@@ -67,6 +67,7 @@ Page({
   search:function(name,page,total){
     wx.request({
       url: 'https://www.alin299.top:5000/book',
+      // url: 'http://127.0.0.1:5000/book',
       method: 'post',
       data: {
         n: name,
@@ -85,6 +86,12 @@ Page({
           self.setData({
             book_list: self.data.book_list,
             total:self.data.total
+          })
+        }
+        else{
+          wx.showToast({
+            title: res.data.result,
+            icon: 'none'
           })
         }
       }
