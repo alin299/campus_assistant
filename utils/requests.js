@@ -62,12 +62,76 @@ function get_balance() {
         wx.showModal({
           title: '提示',
           content: '您的一卡通余额为：'.concat(res.data.result),
-          showCancel: false,
+          // showCancel: false,
+          cancelText: '消费详情',
           success(res) {
             if (res.confirm) {
               console.log('用户点击确定')
+            }else if(res.cancel) {
+              console.log('用户点击取消')
+              wx.navigateTo({
+                url: '/pages/others/consumption/consumption',
+              })
             }
           }
+        })
+      }
+      else if (res.data.code == -1) {
+        wx.showToast({
+          title: res.data.msg,
+          icon: 'none',
+          duration: 2000
+        })
+      }
+
+    },
+    fail() {
+      console.log('查询余额失败')
+      wx.showToast({
+        title: '查询余额失败',
+        icon: 'none'
+      })
+    }
+  })
+}
+//向服务器获取消费详情
+function get_records(self) {
+  if (account == null || spassword == null) {
+    wx.showModal({
+      title: '提示',
+      content: '尚未绑定账号',
+      confirmText: '绑定',
+      success(res) {
+        if (res.confirm) {
+          wx.navigateTo({
+            url: '/pages/bind/bind',
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+    return;
+  }
+  wx.showLoading({
+    title: '查询中',
+  })
+  wx.request({
+    url: server + '/records',
+    method: 'POST',
+    data: {
+      a: account,
+      p: spassword
+    },
+    header: {
+      'content-type': 'application/json'
+    },
+    success(res) {
+      console.log(res.data)
+      if (res.data.code == 1) {
+        wx.hideLoading();
+        self.setData({
+          records: res.data.result
         })
       }
       else if (res.data.code == -1) {
@@ -261,6 +325,7 @@ function get_courses(self) {
 module.exports = {
   load: load,
   get_balance: get_balance,
+  get_records: get_records,
   get_score: get_score,
   get_elec_balance:get_elec_balance,
   get_courses: get_courses
