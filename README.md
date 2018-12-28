@@ -45,3 +45,9 @@
 5. 图书检索
 
 ![](https://raw.githubusercontent.com/alin299/picture/master/img/20181227155804.png)
+
+***
+
+6. 当日消费详情
+
+   ![](https://raw.githubusercontent.com/alin299/picture/master/img/20181228233747.png)
