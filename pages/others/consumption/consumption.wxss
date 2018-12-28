@@ -1,0 +1,6 @@
+.item{
+  margin-top: 20rpx;
+}
+.body text{
+  margin: 40rpx;
+}

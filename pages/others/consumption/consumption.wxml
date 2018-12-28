@@ -1,0 +1,14 @@
+<view class='page'>
+  <block wx:for="{{records}}"  wx:key="mdzz">
+    <view class='item'>
+      <wux-wing-blank size="default">
+        <wux-card title="{{item.sum}}" extra="{{item.time}}">
+            <view slot="body" class='body'>
+              <view><text>商户：</text>{{item.merchant}}</view>
+              <view><text>地点: </text>{{item.place}}</view>
+            </view>
+        </wux-card>
+      </wux-wing-blank>
+    </view>
+  </block>      
+</view>

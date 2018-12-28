@@ -37,12 +37,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 0,
 			"list": [
 				{
 					"id": 0,
 					"name": "2",
-					"pathName": "pages/others/book_searh/book_search",
+					"pathName": "pages/others/consumption/consumption",
 					"query": ""
 				},
 				{
