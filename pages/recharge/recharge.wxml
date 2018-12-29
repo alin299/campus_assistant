@@ -1,2 +1,22 @@
-<!--pages/recharge/recharge.wxml-->
-<text>pages/recharge/recharge.wxml</text>
+<view class='top'>
+  <view class='dormitory'>
+    <view>{{dormitory_array[0][multiIndex[0]]}}#{{dormitory_array[2][multiIndex[2]]}}</view>
+    <view class='other'>
+      <picker
+        mode="multiSelector"
+        bindchange="bindMultiPickerChange"
+        bindcolumnchange="bindcolumnchange"
+        value="{{multiIndex}}"
+        range="{{dormitory_array}}">
+        其他宿舍
+      </picker>
+    </view>
+  </view>
+  <view class='money'>
+    <view>RMB</view>
+    <input class='input' bindblur='bindblur' type='number'></input>
+    <view>￥</view>
+  </view>
+</view>
+<view></view>
+<button catchtap='recharge'>充值</button>

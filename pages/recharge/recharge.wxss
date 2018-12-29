@@ -1,1 +1,36 @@
 /* pages/recharge/recharge.wxss */
+view{
+  background: white;
+}
+.top{
+  margin-top: 40rpx;
+}
+.top>view{
+  margin: 0 40rpx;
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+  padding-left: 40rpx;
+  font-size: 1.2em;
+  border-bottom: 1px gainsboro solid;
+}
+.dormitory{
+  justify-content: space-between;
+}
+.other{
+  font-size: 0.9rem;
+  color: cornflowerblue;
+}
+.money{
+  font-size: 1rem;
+
+}
+.input{
+  margin-left: 80rpx;
+}
+button{
+  margin-top: 200rpx; 
+  color: white;
+  background: #477ee4;
+  width: 80%;
+}
