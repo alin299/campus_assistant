@@ -9,9 +9,9 @@
 - [x] 查课表
 - [x] 查一卡通余额
 - [x] 查寝室电费
-- [ ] 图书检索
-- [ ] 查一卡通消费记录
-- [ ] 寝室电费充值
+- [x] 电费充值
+- [x] 图书检索
+- [x] 查一卡通消费记录
 - [ ] 图书检索接入豆瓣书评
 
 ***
@@ -51,3 +51,10 @@
 6. 当日消费详情
 
    ![](https://raw.githubusercontent.com/alin299/picture/master/img/20181228233747.png)
+
+***
+
+7. 电费充值
+
+   ![](https://raw.githubusercontent.com/alin299/picture/master/img/20181229152438.png)![](https://raw.githubusercontent.com/alin299/picture/master/img/20181229152356.png)
+
