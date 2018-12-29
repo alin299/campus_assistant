@@ -2,5 +2,7 @@
   margin-top: 20rpx;
 }
 .body text{
-  margin: 40rpx;
+  width: 100rpx;
+  display: inline-block;
+  margin: 20rpx;
 }
