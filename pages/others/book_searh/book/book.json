@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "书籍详情",
+  "usingComponents": {
+    "wux-card": "../../../../dist/card/index",
+    "wux-wing-blank": "../../../../dist/wing-blank/index",
+    "wux-rater": "../../../../dist/rater/index"
+  }
+}

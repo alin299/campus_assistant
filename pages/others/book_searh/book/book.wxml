@@ -1,0 +1,33 @@
+<view class='item'>
+  <image src='{{item.cover}}' binderror="errorFunction" data-index='{{index}}' 
+    mode='scaleToFill'></image>
+  <view class='detail'>
+    <text class='name'>{{item.name}}</text>
+    <view class='other'>
+      <text class='number' style='display:block'>{{item.ISBN}}</text>
+      <text class='author'>{{item.author}}</text>
+      <view class='publishing_info'>
+        <text class='publishing'>{{item.publishing}}</text>
+        <text class='time'>{{item.time}}</text>
+      </view>
+      <text class='storage'>{{item.storage}}</text>
+    </view>
+  </view>
+</view>
+<view class='comment'>
+  <scroll-view style='height:100%;' scroll-y='true'>
+    <block wx:for='{{comments}}' wx:key='id'>
+      <view class='item'>
+        <view class='top'>
+          <image src='{{item.avatar}}'></image>
+          <view>
+            <view class='user_name'>{{item.name}}</view>
+            <wux-rater slot="footer" default-value="{{ item.mark }}" disabled />
+          </view>
+        </view>
+        <view class='body'>{{item.content}}</view>
+      </view>
+    </block>
+  </scroll-view>
+  
+</view>
