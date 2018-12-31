@@ -58,3 +58,8 @@
 
    ![](https://raw.githubusercontent.com/alin299/picture/master/img/20181229152438.png)![](https://raw.githubusercontent.com/alin299/picture/master/img/20181229152356.png)
 
+***
+
+8. 图书详情及书评(有点丑...)
+
+   ![](https://raw.githubusercontent.com/alin299/picture/master/img/20181230225827.png)
